@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Plumbing",
+    "icon": "plumbing",
+    "description": "Fix leaks, unclog drains, install or repair pipes and fixtures.",
+    "startingPrice": 45,
+    "category": "Plumbing"
+  },
+  {
+    "id": 2,
+    "name": "Electrical",
+    "icon": "electrical",
+    "description": "Safely handle wiring, outlets, switches, and lighting installations.",
+    "startingPrice": 50,
+    "category": "Electrical"
+  },
+  {
+    "id": 3,
+    "name": "Home Cleaning",
+    "icon": "cleaning",
+    "description": "Deep cleaning, regular housekeeping, and sanitization services.",
+    "startingPrice": 40,
+    "category": "Cleaning"
+  },
+  {
+    "id": 4,
+    "name": "AC Repair",
+    "icon": "ac",
+    "description": "Installation, servicing, repair, and maintenance of air conditioners.",
+    "startingPrice": 60,
+    "category": "AC Repair"
+  },
+  {
+    "id": 5,
+    "name": "Appliance Repair",
+    "icon": "appliance",
+    "description": "Repair for refrigerators, washing machines, microwaves, and more.",
+    "startingPrice": 55,
+    "category": "Appliance Repair"
+  },
+  {
+    "id": 6,
+    "name": "Painting",
+    "icon": "painting",
+    "description": "Interior & exterior wall painting with premium finishes.",
+    "startingPrice": 35,
+    "category": "Painting"
+  },
+  {
+    "id": 7,
+    "name": "Carpentry",
+    "icon": "carpentry",
+    "description": "Custom furniture, repair work, and wood installations done right.",
+    "startingPrice": 50,
+    "category": "Carpentry"
+  },
+  {
+    "id": 8,
+    "name": "Home Maintenance",
+    "icon": "maintenance",
+    "description": "General repairs, handy work, and year-round home upkeep.",
+    "startingPrice": 30,
+    "category": "Home Maintenance"
+  }
+]

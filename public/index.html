@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HomeFix - Reliable Local Services, Right at Your Doorstep. Book trusted home service professionals online." />
+  <title>HomeFix | Reliable Local Services, Right at Your Doorstep</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- ============ NAVBAR (rendered by app.js) ============ -->
+    <header class="navbar" id="navbar">
+      <nav class="nav-container" id="navBar"></nav>
+    </header>
+
+    <!-- ============ TOAST CONTAINER ============ -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <!-- ============ MAIN VIEW ============ -->
+    <main id="mainView"></main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo"><span class="logo-mark">✦</span> HomeFix</div>
+          <p>Reliable Local Services, Right at Your Doorstep. Connecting you with trusted professionals near you.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#" data-nav="services">Find Services</a>
+          <a href="#" data-nav="providers">Find Professionals</a>
+          <a href="#" data-nav="about">About Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#" data-nav="how">How It Works</a>
+          <a href="#" data-nav="about">Why HomeFix</a>
+          <a href="#" data-nav="home">Home</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get Started</h4>
+          <a href="#" data-action="register">Register</a>
+          <a href="#" data-action="login">Login</a>
+          <a href="#" data-action="bookings">My Bookings</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> HomeFix. All rights reserved. Demo project.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ============ LOGIN MODAL ============ -->
+  <div class="modal-backdrop" id="loginModal" hidden>
+    <div class="modal">
+      <button class="modal-close" data-close="loginModal" aria-label="Close">&times;</button>
+      <div class="modal-head">
+        <span class="modal-icon">🔐</span>
+        <h2>Welcome Back</h2>
+        <p>Log in to manage your bookings and profile.</p>
+      </div>
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" placeholder="you@example.com" autocomplete="email" />
+          <p class="field-error" data-error="loginEmail"></p>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password" />
+          <p class="field-error" data-error="loginPassword"></p>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="loginSubmit">Log In</button>
+        <p class="modal-alt">Don't have an account? <a href="#" data-action="register">Register</a></p>
+        <div class="demo-hint">
+          <strong>Demo:</strong><br />customer@homefix.com / password<br />provider@homefix.com / password<br />admin@homefix.com / password
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ REGISTER MODAL ============ -->
+  <div class="modal-backdrop" id="registerModal" hidden>
+    <div class="modal">
+      <button class="modal-close" data-close="registerModal" aria-label="Close">&times;</button>
+      <div class="modal-head">
+        <span class="modal-icon">✨</span>
+        <h2>Create an Account</h2>
+        <p>Join HomeFix to book trusted professionals.</p>
+      </div>
+      <form id="registerForm" novalidate>
+        <div class="form-group">
+          <label for="regName">Full Name</label>
+          <input type="text" id="regName" placeholder="Jane Customer" autocomplete="name" />
+          <p class="field-error" data-error="regName"></p>
+        </div>
+        <div class="form-group">
+          <label for="regEmail">Email</label>
+          <input type="email" id="regEmail" placeholder="you@example.com" autocomplete="email" />
+          <p class="field-error" data-error="regEmail"></p>
+        </div>
+        <div class="form-group">
+          <label for="regPassword">Password</label>
+          <input type="password" id="regPassword" placeholder="At least 6 characters" autocomplete="new-password" />
+          <p class="field-error" data-error="regPassword"></p>
+        </div>
+        <div class="form-group">
+          <label for="regRole">I am a</label>
+          <select id="regRole">
+            <option value="CUSTOMER">Customer</option>
+            <option value="PROVIDER">Service Provider</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="registerSubmit">Create Account</button>
+        <p class="modal-alt">Already have an account? <a href="#" data-action="login">Login</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ BOOKING MODAL ============ -->
+  <div class="modal-backdrop" id="bookingModal" hidden>
+    <div class="modal modal-wide">
+      <button class="modal-close" data-close="bookingModal" aria-label="Close">&times;</button>
+      <div class="modal-head">
+        <span class="modal-icon">📅</span>
+        <h2>Book a Service</h2>
+        <p>Confirm your booking details below.</p>
+      </div>
+      <form id="bookingForm" novalidate>
+        <div id="bookingProviderBar"></div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bService">Service</label>
+            <select id="bService"></select>
+          </div>
+          <div class="form-group">
+            <label for="bProvider">Provider</label>
+            <select id="bProvider"></select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bDate">Date</label>
+            <input type="date" id="bDate" />
+            <p class="field-error" data-error="bDate"></p>
+          </div>
+          <div class="form-group">
+            <label for="bTime">Time</label>
+            <select id="bTime"></select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="bAddress">Service Address</label>
+          <input type="text" id="bAddress" placeholder="House no, street, city" />
+          <p class="field-error" data-error="bAddress"></p>
+        </div>
+        <div class="form-group">
+          <label for="bNotes">Additional Notes (optional)</label>
+          <textarea id="bNotes" rows="2" placeholder="Describe the job or any special instructions"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="bookingSubmit">Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ CONFIRMATION MODAL ============ -->
+  <div class="modal-backdrop" id="confirmModal" hidden>
+    <div class="modal">
+      <button class="modal-close" data-close="confirmModal" aria-label="Close">&times;</button>
+      <div class="confirm-success">
+        <span class="confirm-check">✓</span>
+        <h2>Booking Confirmed!</h2>
+        <p>Your booking has been created and sent to the provider.</p>
+      </div>
+      <div class="confirm-details" id="confirmDetails"></div>
+      <div class="confirm-actions">
+        <button class="btn btn-primary" data-close="confirmModal">Done</button>
+        <button class="btn btn-outline" data-action="dashboard">View Dashboard</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ VIEW BOOKING MODAL ============ -->
+  <div class="modal-backdrop" id="viewBookingModal" hidden>
+    <div class="modal">
+      <button class="modal-close" data-close="viewBookingModal" aria-label="Close">&times;</button>
+      <div class="modal-head">
+        <span class="modal-icon">📋</span>
+        <h2>Booking Details</h2>
+        <p>Full information for this booking.</p>
+      </div>
+      <div id="viewBookingContent"></div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

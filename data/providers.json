@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "name": "Ravi Kumar",
+    "service": "Plumbing",
+    "location": "Downtown",
+    "rating": 4.8,
+    "reviews": 132,
+    "experience": 8,
+    "price": 45,
+    "availability": "Available",
+    "avatar": "RK",
+    "verified": true,
+    "description": "Certified plumber specializing in leak repairs, pipe fittings, and full bathroom installations. Fast, tidy, and reliable.",
+    "customerReviews": [
+      { "name": "Aarav", "rating": 5, "comment": "Fixed a stubborn leak in minutes. Very professional." },
+      { "name": "Meera", "rating": 4, "comment": "Great work, arrived right on time." }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Priya Sharma",
+    "service": "Home Cleaning",
+    "location": "Greenfield",
+    "rating": 4.8,
+    "reviews": 96,
+    "experience": 6,
+    "price": 40,
+    "availability": "Available",
+    "avatar": "PS",
+    "verified": true,
+    "description": "Thorough, eco-friendly deep cleaning for homes and offices. Supplies included. Sparkling results every time.",
+    "customerReviews": [
+      { "name": "David", "rating": 5, "comment": "My house has never been cleaner. Highly recommend." },
+      { "name": "Sana", "rating": 5, "comment": "Professional and really attentive to detail." }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Arjun Mehta",
+    "service": "Electrical",
+    "location": "Midtown",
+    "rating": 4.7,
+    "reviews": 210,
+    "experience": 10,
+    "price": 50,
+    "availability": "Available",
+    "avatar": "AM",
+    "verified": true,
+    "description": "Licensed electrician handling wiring, lighting upgrades, and safety inspections for homes and apartments.",
+    "customerReviews": [
+      { "name": "Rahul", "rating": 5, "comment": "Wired my entire new home. Excellent work." },
+      { "name": "Neha", "rating": 4, "comment": "Good service, explained everything clearly." }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Sneha Reddy",
+    "service": "AC Repair",
+    "location": "North Side",
+    "rating": 4.8,
+    "reviews": 88,
+    "experience": 7,
+    "price": 60,
+    "availability": "Available",
+    "avatar": "SR",
+    "verified": true,
+    "description": "Expert in AC installation, gas refills, repair, and seasonal servicing for all major brands.",
+    "customerReviews": [
+      { "name": "Vikas", "rating": 5, "comment": "AC cooling like new after a quick service visit." },
+      { "name": "Anjali", "rating": 5, "comment": "Quick diagnosis, great price." }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Mohammed Irfan",
+    "service": "Carpentry",
+    "location": "West End",
+    "rating": 4.6,
+    "reviews": 74,
+    "experience": 12,
+    "price": 50,
+    "availability": "Busy",
+    "avatar": "MI",
+    "verified": true,
+    "description": "Master carpenter for custom furniture, modular kitchens, repairs, and complete woodwork projects.",
+    "customerReviews": [
+      { "name": "Kiran", "rating": 4, "comment": "Beautiful custom wardrobe. Planned timing." },
+      { "name": "Sujata", "rating": 5, "comment": "Very skilled craftsman." }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Deepa Nair",
+    "service": "Painting",
+    "location": "East End",
+    "rating": 4.6,
+    "reviews": 64,
+    "experience": 9,
+    "price": 35,
+    "availability": "Available",
+    "avatar": "DN",
+    "verified": true,
+    "description": "Interior and exterior painting with premium finishes, texture walls, and clean, quick turnaround.",
+    "customerReviews": [
+      { "name": "Rohit", "rating": 5, "comment": "Checked my whole house, looks fantastic." },
+      { "name": "Pooja", "rating": 4, "comment": "Budget friendly, minor touch-ups wanted." }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Amit Shah",
+    "service": "Appliance Repair",
+    "location": "Riverside",
+    "rating": 4.8,
+    "reviews": 142,
+    "experience": 8,
+    "price": 55,
+    "availability": "Available",
+    "avatar": "AS",
+    "verified": true,
+    "description": "Repairs refrigerators, washing machines, ovens, and more with genuine spare parts. Fixed, onsite support.",
+    "customerReviews": [
+      { "name": "Farhan", "rating": 5, "comment": "My fridge is working perfectly again." },
+      { "name": "Renu", "rating": 5, "comment": "Honest, quick, affordable." }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Karthik Rao",
+    "service": "Home Maintenance",
+    "location": "Broadway",
+    "rating": 4.6,
+    "reviews": 51,
+    "experience": 5,
+    "price": 30,
+    "availability": "Available",
+    "avatar": "KR",
+    "verified": true,
+    "description": "Your go-to handyman for drywall, minor plumbing, furniture assembly, and everyday household fixes.",
+    "customerReviews": [
+      { "name": "Nikhil", "rating": 4, "comment": "Fixed a whole list of small but annoying issues." },
+      { "name": "Divya", "rating": 5, "comment": "Super helpful and friendly." }
+    ]
+  }
+]

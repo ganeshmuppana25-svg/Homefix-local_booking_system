@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "fullName": "System Admin",
+    "email": "admin@homefix.com",
+    "password": "$2a$10$p36Js9UjzIllSoxkTE0pQ.3Aj/LdYGrDfqe4Jcb0kkWac2kMlzPBm",
+    "role": "ADMIN",
+    "phone": "555-0100",
+    "address": "Head Office",
+    "createdAt": "2024-01-01T09:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "fullName": "Jane Customer",
+    "email": "customer@homefix.com",
+    "password": "$2a$10$p36Js9UjzIllSoxkTE0pQ.3Aj/LdYGrDfqe4Jcb0kkWac2kMlzPBm",
+    "role": "CUSTOMER",
+    "phone": "555-0123",
+    "address": "42 Maple Street, Downtown",
+    "createdAt": "2024-02-15T10:30:00.000Z"
+  },
+  {
+    "id": 3,
+    "fullName": "Ravi Kumar",
+    "email": "provider@homefix.com",
+    "password": "$2a$10$p36Js9UjzIllSoxkTE0pQ.3Aj/LdYGrDfqe4Jcb0kkWac2kMlzPBm",
+    "role": "PROVIDER",
+    "providerId": 1,
+    "phone": "555-0145",
+    "address": "Downtown Service Hub",
+    "createdAt": "2024-02-20T08:15:00.000Z"
+  },
+  {
+    "id": 5,
+    "fullName": "Sneha Reddy",
+    "email": "sneha@homefix.com",
+    "password": "$2a$10$p36Js9UjzIllSoxkTE0pQ.3Aj/LdYGrDfqe4Jcb0kkWac2kMlzPBm",
+    "role": "PROVIDER",
+    "providerId": 4,
+    "phone": "555-0166",
+    "address": "North Side Service",
+    "createdAt": "2024-03-10T09:45:00.000Z"
+  },
+  {
+    "id": 6,
+    "fullName": "GANESH muppana",
+    "email": "ganesh@gmail.com",
+    "password": "$2a$10$nmXzHt1PK8fZTNJWVXKElO76QskvyYWSVYT1uK/tn8WR36Tj79mje",
+    "role": "CUSTOMER",
+    "createdAt": "2026-08-27T16:10:28.054Z"
+  }
+]
