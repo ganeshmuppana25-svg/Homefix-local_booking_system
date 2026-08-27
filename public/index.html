@@ -5,26 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="HomeFix - Reliable Local Services, Right at Your Doorstep. Book trusted home service professionals online." />
   <title>HomeFix | Reliable Local Services, Right at Your Doorstep</title>
+  <!-- Critical boot styles: branded first paint, no flash of unstyled/old content -->
+  <style>
+    html, body { margin: 0; background: #f6f8fb; }
+    body.dark { background: #0b1220; }
+    footer[hidden] { display: none !important; }
+    .boot-main { min-height: 70vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 16px; text-align: center; }
+    .boot-mark { font-size: 2.4rem; color: #16a34a; }
+    .boot-spinner { width: 32px; height: 32px; border-radius: 50%;
+      border: 3px solid #e7f6ec; border-top-color: #16a34a; }
+    .boot-title { color: #475569; font: 500 .95rem/1.4 sans-serif; }
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
+  <script>
+    /* Apply saved theme BEFORE first paint (prevents light flash for dark-mode users) */
+    try { if (localStorage.getItem('homefix-theme') === 'dark') document.body.classList.add('dark'); } catch (e) {}
+  </script>
   <div id="app">
     <!-- ============ NAVBAR (rendered by app.js) ============ -->
     <header class="navbar" id="navbar">
-      <nav class="nav-container" id="navBar"></nav>
+      <nav class="nav-container" id="navBar">
+        <!-- Static branded placeholder: visible pre-init, replaced by renderNav() -->
+        <a class="logo" href="#/home"><span class="logo-mark">✦</span>HomeFix</a>
+      </nav>
     </header>
 
     <!-- ============ TOAST CONTAINER ============ -->
     <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
-    <!-- ============ MAIN VIEW ============ -->
-    <main id="mainView"></main>
+    <!-- ============ MAIN VIEW (branded boot skeleton, replaced by app.js) ============ -->
+    <main id="mainView">
+      <noscript><p style="text-align:center;padding:40px 16px;">HomeFix needs JavaScript enabled to search and book services.</p></noscript>
+      <div class="boot-main" aria-busy="true">
+        <div class="boot-mark">✦</div>
+        <div class="boot-spinner" role="status" aria-label="Loading HomeFix"></div>
+        <p class="boot-title">Loading HomeFix…</p>
+      </div>
+    </main>
 
-    <!-- ============ FOOTER ============ -->
-    <footer class="footer">
+    <!-- ============ FOOTER (revealed by app.js once first render completes) ============ -->
+    <footer class="footer" hidden>
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="logo"><span class="logo-mark">✦</span> HomeFix</div>
@@ -198,6 +224,6 @@
     </div>
   </div>
 
-  <script src="app.js" defer></script>
+  <script src="app.js?v=2" defer></script>
 </body>
 </html>

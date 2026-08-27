@@ -1,3 +1,31 @@
+/* ============ BOOT SKELETON (initial branded loading state before app.js renders) ============ */
+footer[hidden] { display: none !important; }
+.boot-main {
+  min-height: calc(100vh - 220px);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 16px; padding: 60px 16px; text-align: center;
+}
+.boot-mark {
+  font-size: 2.4rem; color: var(--primary);
+  animation: bootPulse 1.4s ease-in-out infinite;
+}
+.boot-spinner {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 3px solid var(--primary-soft);
+  border-top-color: var(--primary);
+  animation: bootSpin 0.8s linear infinite;
+}
+.boot-title {
+  color: var(--text-soft); font-family: var(--font-body);
+  font-size: 0.95rem; letter-spacing: 0.02em;
+}
+@keyframes bootSpin { to { transform: rotate(360deg); } }
+@keyframes bootPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .boot-spinner, .boot-mark { animation: none; }
+}
+
 /* =========================================================
    HOMEFIX STYLES
    ========================================================= */

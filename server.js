@@ -55,7 +55,19 @@ try {
 /* ---------- Middleware ---------- */
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+
+// Static assets: HTML always revalidates (prevents stale "old page" flashes);
+// css/js are cacheable but short-lived so updates propagate quickly.
+app.use(express.static(path.join(__dirname, 'public'), {
+  setHeaders(res, filePath) {
+    const name = path.basename(filePath).toLowerCase();
+    if (name.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-cache');
+    } else if (name.endsWith('.css') || name.endsWith('.js')) {
+      res.setHeader('Cache-Control', 'public, max-age=600');
+    }
+  }
+}));
 
 app.use(session({
   secret: process.env.SESSION_SECRET || 'homefix-demo-secret-key',
@@ -406,8 +418,9 @@ app.use((err, req, res, next) => {
   return res.status(500).json({ error: 'Something went wrong on the server.' });
 });
 
-// SPA fallback: serve index.html for any non-API GET.
+// SPA fallback: serve index.html for any non-API GET (never cached, always revalidated).
 app.get(/^\/(?!api\/).*/, (req, res) => {
+  res.set('Cache-Control', 'no-cache');
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 

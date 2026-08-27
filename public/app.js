@@ -1338,8 +1338,16 @@
     // ALWAYS render the UI even if event binding fails, so the page is never blank.
     try { bindEvents(); }
     catch (err) { console.error('bindEvents failed:', err); }
-    renderNav();
-    render();
+    try { renderNav(); render(); }
+    finally { revealApp(); } // swap boot skeleton for real content & reveal footer
+  }
+
+  /* Reveal the static footer once the first render completes (ends the boot state). */
+  function revealApp() {
+    try {
+      const f = document.querySelector('.footer');
+      if (f) f.hidden = false;
+    } catch (err) { /* never block init */ }
   }
 
   document.addEventListener('DOMContentLoaded', init);
